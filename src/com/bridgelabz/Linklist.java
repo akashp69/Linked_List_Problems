@@ -18,13 +18,24 @@ public class Linklist<T> {
         }
     }
     /**
-     * This method is used for delete the elements in linked list
+     * This method is used for delete the last  elements in linked list
      */
-    public void pop() {
-        if (this.head != null) {
-            Node temp = this.head;
-            this.head = this.head.next;
-            temp = null;
+    public void popBack() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        } else {
+            if (head != tail) {
+                Node current = head;
+
+                while (current.next != tail) {
+                    current = current.next;
+                }
+                tail = current;
+                tail.next = null;
+            } else {
+                head = tail = null;
+            }
         }
     }
 
