@@ -12,7 +12,5 @@ class LinkListMain {
         list1.add(70);
         list1.show();
         list1.search(30);
-
-
     }
 }
