@@ -18,34 +18,29 @@ public class Linklist<T> {
         }
     }
     /**
-     * This method is used for search the elements in linked list
+     * This method is used for add 40 value node after 30 value node  in linked list
      */
-    public void search(T data) {
-        Node current = head;
-        int i = 1;
-        boolean flag = false;
+    public void insertAtMid(T data) {
+        if (head == null)
+            head = new Node(data);
+        else {
+            Node newNode = new Node(data);
+            Node temp = head;
+            int length = 0;
 
-        if (head == null) {
-            System.out.println("List is empty");
-        } else {
-            while (current != null) {
-                if (current.data == data) {
-                    flag = true;
-                    break;
-                }
-                i++;
-                current = current.next;
+            while (temp != null) {
+                length++;
+                temp = temp.next;
             }
+            int count = ((length % 2) == 0) ? (length / 2) : (length + 1) / 2;
+            temp = head;
 
-        }
-        if (flag) {
-            System.out.println("The Node with value "  + data +  " is present in the list at the position : " + i);
-
-        } else {
-            System.out.println("Node with value is not present in the list");
+            while (count-- > 1)
+                temp = temp.next;
+            newNode.next = temp.next;
+            temp.next = newNode;
         }
     }
-
     /**
      * This method is used for showing the elements in linked list
      */
