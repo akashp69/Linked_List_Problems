@@ -3,20 +3,22 @@ package com.bridgelabz;
 public class Linklist<T> {
     Node<T> head;
     Node<T> tail;
+    /**
+     * This method is used for append the elements in linked list
+     */
 
-    public void add(T data) {
+    public void append(T data) {
         Node<T> newNode = new Node(data);
         if (head == null) {
             head = newNode;
-            tail = newNode;
         } else {
             tail.next = newNode;
-            tail = newNode;
         }
+        tail = newNode;
     }
 
     /**
-     * This method is used for showing linked list elements
+     * This method is used for showing the elements in linked list
      */
 
     public void show() {
